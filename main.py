@@ -24,5 +24,83 @@ ZADÁNÍ:
 12. zápis organizovaný do krátkých a přehledných funkcí.
 
 """
+# zabalit do funkce jako uvod
+
+print(f"\nWelcome to Tic Tac Toe.")
+print(f"=" * 35)
+
+game_rules = """
+GAME RULES:
+Each player can place one mark (or stone)
+per turn on the 3x3 grid. The WINNER is
+who succeeds in placing three of their
+marks in a:
+* horizontal,
+* vertical or
+* diagonal row
+"""
+print(game_rules)
+print(f"=" * 35)
+
+print("Let's start the game!")
+print("-" * 35)
+
+# funkce pro vytvoreni hraci plochy 
+
+
+
+
+
+
+
+
+
+# definice prniho hrace (realneho) + moznost volby 
+# osetrit spatne volby a upozornit na ne 
+# na pole kde uz neco je nejde dat neco dalsiho 
+
+
+
+
+
+
+# definice 2 hrace (pc) knihovna random 
+
+
+
+
+
+
+
+# po kazde spravne volbe dojde k zobrazeni pole 
+
+
+
+
+
+
+
+
+
+# horizontalni, vert a diagonalni kontrola zda uz jeden hrac nema 3 
+
+
+
+
+
+
+
+
+
+
+# bez volneho pole dojde k remize 
+
+
+
+
+
+
+
+
 
 
