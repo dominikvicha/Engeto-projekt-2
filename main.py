@@ -47,8 +47,23 @@ print("-" * 35)
 
 # funkce pro vytvoreni hraci plochy 
 
+possible_numbers = [1,2,3,4,5,6,7,8,9]
+game_board = [[1,2,3], [4,5,6], [7,8,9]]
+
+rows = 3
+cols = 3 
 
 
+def print_Game_Board():
+    for x in range(rows):
+        print("\n+---+---+---+")
+        print("|", end="")
+        
+        for y in range(cols):
+            print("", game_board[x][y], end=" |")
+    print("\n+---+---+---+")
+
+print_Game_Board()
 
 
 
