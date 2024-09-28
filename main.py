@@ -70,6 +70,8 @@ print_Game_Board()
 
 
 
+
+
 # definice prniho hrace (realneho) + moznost volby 
 # osetrit spatne volby a upozornit na ne 
 # na pole kde uz neco je nejde dat neco dalsiho 
@@ -114,8 +116,11 @@ print_Game_Board()
 
 
 
+"""
+if __name__ == "__main__":
+    main()
 
-
+"""
 
 
 
