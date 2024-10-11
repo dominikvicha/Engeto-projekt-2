@@ -26,6 +26,8 @@ ZADÁNÍ:
 """
 # zabalit do funkce jako uvod
 
+import random
+
 print(f"\nWelcome to Tic Tac Toe.")
 print(f"=" * 35)
 
@@ -63,10 +65,106 @@ def print_Game_Board():
             print("", game_board[x][y], end=" |")
     print("\n+---+---+---+")
 
-print_Game_Board()
+
+def modify_game_board(player): 
+    global possible_numbers, game_board
+
+    while True:
+
+        if player == 'X':
+            try:
+                selected_number = input("Select number from the board: ")
+                if not selected_number.isdigit():
+                    print("Please eneter the numerical value")
+                    continue
+
+                selected_number = int(selected_number)
+                if selected_number <1 or selected_number >9:
+                    print("Enter the number between 1-9.")
+                    continue
+                if selected_number not in possible_numbers:
+                    print("The cell youve selected is full.")
+                    continue
+            
+
+            except ValueError:
+                print("You selected wrong character, please enter a number.")
+                continue
+        
+        else:
+            selected_number = random.choice(possible_numbers)
+            print(f"Pc selected: {selected_number}")
+
+        
+        for i in range(rows):
+            for j in range(cols):
+                if game_board[i][j] == selected_number:
+                    game_board[i][j] = player 
+                    possible_numbers.remove(selected_number) 
+                    return True
+                
+    return False
+
+def board_is_full():
+    return len(possible_numbers) == 0
+
+
+def play_game():
+    global possible_numbers, game_board
+    possible_numbers = list(range(1, 10))
+    game_board = [[1,2,3], [4,5,6], [7,8,9]]
+
+    print("\nStarting game board:")
+    print_Game_Board()
+
+    current_player = 'X'
+    while True:
+        if modify_game_board(current_player):
+            print_Game_Board()
+            winner = check_winner(game_board)
+            if winner: 
+                print(f"Player {winner} wins the game!")
+                break
+            if board_is_full():
+                print("Its a tie! The field is full.")
+                break
+            current_player = '0' if current_player == 'X' else 'X'
+        else:
+            break
+
+
+def check_winner(board):
+
+    for row in board:
+        if row[0] == row[1] == row[2] and row[0] in ['X', '0']:
+            return row[0]
+        
+    for col in range(3):
+        if board[0][col] == board[1][col] == board[2][col] in ['X', '0']:
+            return board[0][col]
+        
+    if board [0][0] == board [1][1] == board [2][2] in ['X', '0']:
+        return board[0][0]
+    
+    if board [0][2] == board [1][1] == board [2][0] in ['X', '0']:
+        return board[0][2]
+
+    return None
+
+def main ():
+    
+    while True: 
+        play_game()
+        play_again = input("Do you want to play again? (yes/no): ").strip().lower()
+        if play_again != "yes":
+            print("Thanks for playing.")
+            break
+        
 
 
 
+if __name__ == "__main__":
+    main()
 
 
 
@@ -76,16 +174,7 @@ print_Game_Board()
 # osetrit spatne volby a upozornit na ne 
 # na pole kde uz neco je nejde dat neco dalsiho 
 
-
-
-
-
-
 # definice 2 hrace (pc) knihovna random 
-
-
-
-
 
 
 
@@ -93,34 +182,7 @@ print_Game_Board()
 
 
 
-
-
-
-
-
-
 # horizontalni, vert a diagonalni kontrola zda uz jeden hrac nema 3 
 
 
-
-
-
-
-
-
-
-
-# bez volneho pole dojde k remize 
-
-
-
-
-
-"""
-if __name__ == "__main__":
-    main()
-
-"""
-
-
-
+# bez volneho pole dojde k remize
