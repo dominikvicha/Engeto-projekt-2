@@ -24,7 +24,6 @@ ZADÁNÍ:
 12. zápis organizovaný do krátkých a přehledných funkcí.
 
 """
-# zabalit do funkce jako uvod
 
 import random
 
@@ -86,7 +85,6 @@ def modify_game_board(player):
                     print("The cell youve selected is full.")
                     continue
             
-
             except ValueError:
                 print("You selected wrong character, please enter a number.")
                 continue
@@ -160,29 +158,7 @@ def main ():
             print("Thanks for playing.")
             break
         
-
-
-
 if __name__ == "__main__":
     main()
 
 
-
-
-
-# definice prniho hrace (realneho) + moznost volby 
-# osetrit spatne volby a upozornit na ne 
-# na pole kde uz neco je nejde dat neco dalsiho 
-
-# definice 2 hrace (pc) knihovna random 
-
-
-
-# po kazde spravne volbe dojde k zobrazeni pole 
-
-
-
-# horizontalni, vert a diagonalni kontrola zda uz jeden hrac nema 3 
-
-
-# bez volneho pole dojde k remize
